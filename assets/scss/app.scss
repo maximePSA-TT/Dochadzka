@@ -1,0 +1,91 @@
+@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap-select/sass/bootstrap-select";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+@import "formModal";
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  body {
+    width: 98vw;
+    height: 100vh;
+    font-family: roboto;
+
+    table {
+      table-layout: fixed;
+      thead {
+        .shiftWidth {
+          width: 4%;
+        }
+        th {
+          font-size: 1.5rem;
+          font-weight: normal;
+        }
+      }
+
+
+      tbody {
+        .currentDay1 {
+          background-color: #B8CDFB;
+        }
+        .currentDay2 {
+          background-color: #B8CDFB;
+        }
+        .currentDay3 {
+          background-color: #B8CDFB;
+        }
+          tr {
+            .morePadding {
+              padding: 0.4rem!important;
+            }
+            .align-middle {
+              font-size: 1.2rem;
+              font-weight: normal;
+            }
+            td {
+                .borderStyle {
+                  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+                  border-radius: 2px;
+
+                }
+
+                .borderStyle:hover {
+                  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
+                  background-color: lightgray;
+                  cursor: pointer;
+
+                }
+
+                .borderStyle:active {
+                  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+                  background-color: whitesmoke !important;
+                  transition: all 50ms linear;
+                }
+                .red {
+                  color: red;
+                }
+                .blue {
+                  color: blue;
+                }
+            }
+          }
+      }
+
+    }
+  }
+}
+
+.table-sm td, .table-sm th {
+  padding-bottom: 0rem;
+}
+
+
+
+

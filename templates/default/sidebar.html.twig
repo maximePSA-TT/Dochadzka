@@ -1,0 +1,123 @@
+
+
+{#{% block stylesheets %}#}
+        {#{{ encore_entry_link_tags('app') }}#}
+{#{% endblock %}#}
+
+{#<nav id="sidebar">#}
+    {#<div id="dismiss">#}
+        {#<i class="fas fa-arrow-left"></i>#}
+    {#</div>#}
+
+    {#<div class="sidebar-header">#}
+        {#<h4>#}
+            {#<span id="ur" style="color:lightgrey;" data-ur-id="#}{#{{ ur.id }}">{{ ur.name }}#}{#</span>#}
+        {#</h4>#}
+    {#</div>#}
+
+    {#<div class="container">#}
+        {#<div class="row">#}
+            {#<div class="col" style="padding: 0 2rem;">#}
+                {#<form id="navbar-form" class="text-center">#}
+                    {#<div class="form-group">#}
+                        {#<label for="navbar-form-ur-input" class="sr-only">UR</label>#}
+                        {#<input id="navbar-form-ur-input" type="text" name="ur" value="#}{##}{#{{ ur.id }}#}{#"#}
+                               {#style="display: none;">#}
+                    {#</div>#}
+
+                    {#<div class="form-group mb-4">#}
+                        {#<label for="date-picker" class="sr-only">Dátum</label>#}
+                        {#<input id="date-picker" type="text" class="form-control text-center" name="date"#}
+                               {#value="#}{#{{ currentDate|date('d/m/Y') }}#}{#"#}
+                               {#data-old-value="#}{#{{ currentDate|date('d/m/Y') }}#}{#">#}
+                    {#</div>#}
+
+                    {#<div class="form-group mb-4 ">#}
+                        {#<label for="shift-type-select" class="sr-only">Typ zmeny</label>#}
+                        {#<div id="shift-type-select" class="btn-group" role="group"#}
+                             {#data-old-value="#}{#{{ actualPeriod }}#}{#">#}
+                            {#<button type="button"#}
+                                    {#class="btn btn-light shift-type-btn pb-2 pt-2 pl-4 pr-4 #}{#{{ actualPeriod == 'M' ? 'active': '' }}#}{#"#}
+                                    {#data-shift-type="M">#}
+                                {#Ranná#}
+                            {#</button>#}
+                            {#<button type="button"#}
+                                    {#class="btn btn-light shift-type-btn border-left #}{# {{ actualPeriod == 'A' ? 'active': '' }}#}{#"#}
+                                    {#data-shift-type="A">#}
+                                {#Poobedná#}
+                            {#</button>#}
+                            {#<button type="button"#}
+                                    {#class="btn btn-light shift-type-btn pl-4 pr-4 border-left #}{#{{ actualPeriod == 'N' ? 'active': '' }}#}{#"#}
+                                    {#data-shift-type="N"#}
+                                    {#style="border-top-right-radius: .25rem; border-bottom-right-radius: .25rem;">#}
+                                {#Nočná#}
+                            {#</button>#}
+                            {#<button type="button" class="btn btn-success shift-type-btn weekend-shift-type-btn"#}
+                                    {#data-shift-type="MW"#}
+                                    {#style="display: none; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;">#}
+                                {#Ranná víkend#}
+                            {#</button>#}
+                            {#<button type="button" class="btn btn-success shift-type-btn weekend-shift-type-btn"#}
+                                    {#data-shift-type="AW" style="display: none;">#}
+                                {#Poobedná víkend#}
+                            {#</button>#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<button id="navbar-submit-btn" type="submit" class="btn btn-outline-light" disabled>#}
+                        {#Vyhľadať#}
+                    {#</button>#}
+                {#</form>#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class="row mt-4" style="display: none;">#}
+            {#<div class="col">#}
+                {#<label for="refresh-type-select">Automatická obnova</label>#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class="row" style="display: none;">#}
+            {#<div class="col">#}
+                {#<div class="form-group mb-4 ">#}
+                    {#<div id="refresh-type-select" class="btn-group" role="group"#}
+                         {#data-old-value="3000">#}
+                        {#<button type="button"#}
+                                {#class="btn btn-light refresh-type-btn pb-2 pt-2 pl-4 pr-4"#}
+                                {#data-rate="300000">#}
+                            {#5 minút#}
+                        {#</button>#}
+                        {#<button type="button"#}
+                                {#class="btn btn-light refresh-type-btn border-left active"#}
+                                {#data-rate="20000">#}
+                            {#10 minút#}
+                        {#</button>#}
+                        {#<button type="button"#}
+                                {#class="btn btn-light refresh-type-btn pl-4 pr-4 border-left"#}
+                                {#data-rate="1200000">#}
+                            {#20 minút#}
+                        {#</button>#}
+                        {#<button type="button"#}
+                                {#class="btn btn-light refresh-type-btn pl-4 pr-4 border-left"#}
+                                {#data-rate="-1">#}
+                            {#Vypnúť#}
+                        {#</button>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+    {#<div class="container">#}
+
+        {#<div class="row mt-1">#}
+            {#<div class="col text-center">#}
+                {#<div class="sidebar-header">#}
+                    {#<h4>#}
+                        {#<span style="color:lightgrey;">TMAVÉ ZOBRAZENIE</span>#}
+                    {#</h4>#}
+                {#</div>#}
+                {#<input type="checkbox" data-toggle="toggle" data-onstyle="dark"">#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+
+    {#</div>#}
+
+{#</nav>#}

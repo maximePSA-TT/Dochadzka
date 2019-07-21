@@ -1,0 +1,291 @@
+{% for key, rowData in rowDatas %}
+    {% set dateString = key %}
+
+    {% for key2, data in rowData %}
+        <tr class="{# {% if slovakDay == currentDay %} #} currentDay1 {#{% endif %}#}">
+            <th scope="row" rowspan="" class='align-midde'>{#{{ slovakDay }}#}
+                {{ dateString }}<br>
+            </th>
+            <td class="">
+                <div class="borderStyle ml-1 mr-1 shift">{{ key2 }}</div>
+            </td>
+            {% for i in 1..13 %}
+            <td>
+                <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                    <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                    <div class="pr-2">+1</div>
+                </div>
+            </td>
+                {% endfor %}
+        </tr>
+
+        {% set dateString = '' %}
+    {% endfor %}
+{% endfor %}
+
+
+{% set foo = -1 %}
+
+
+
+{% for slovakDay in slovakDays %}
+    {% set foo = foo+1 %}
+    <tr class="{% if slovakDay == currentDay %} currentDay1 {% endif %}">
+        <th scope="row" rowspan="3" class='align-middle'>{{ slovakDay }}
+            <br> {{   firstDay|date_modify ( "+" ~ foo ~ "day")|date('d/m/Y')  }}
+        </th>
+
+
+        <td class="">
+            <div class="borderStyle ml-1 mr-1 shift">A</div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                <div class="pr-2">+1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around blue">
+                <div class="pl-2"><i class="fas fa-arrow-down"></i></div>
+                <div class="pr-2">-1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around blue">
+                <div class="pl-2"><i class="fas fa-arrow-down"></i></div>
+                <div class="pr-2">-2</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2">0</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                <div class="pr-2">+1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 dark d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2"> 0</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                <div class="pr-2">+2</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around blue">
+                <div class="pl-2"><i class="fas fa-arrow-down"></i></div>
+                <div class="pr-2">-1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around blue">
+                <div class="pl-2"><i class="fas fa-arrow-down"></i></div>
+                <div class="pr-2">-2</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 dark d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2"> 0</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                <div class="pr-2">+1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 dark d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2"> 0</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 dark d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2"> 0</div>
+            </div>
+        </td>
+    </tr>
+    <tr class="{% if slovakDay == currentDay %} currentDay2 {% endif %}">
+        <td>
+            <div class="borderStyle ml-1 mr-1 shift">{{ shift[1].shiftAbbreviation }}</div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                <div class="pr-2">+1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around blue">
+                <div class="pl-2"><i class="fas fa-arrow-down"></i></div>
+                <div class="pr-2">-1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around blue">
+                <div class="pl-2"><i class="fas fa-arrow-down"></i></div>
+                <div class="pr-2">-2</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2">0</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                <div class="pr-2">+1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 dark d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2"> 0</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                <div class="pr-2">+2</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around blue">
+                <div class="pl-2"><i class="fas fa-arrow-down"></i></div>
+                <div class="pr-2">-1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around blue">
+                <div class="pl-2"><i class="fas fa-arrow-down"></i></div>
+                <div class="pr-2">-2</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 dark d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2"> 0</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                <div class="pr-2">+1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 dark d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2"> 0</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 dark d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2"> 0</div>
+            </div>
+        </td>
+    </tr>
+    <tr class="{% if slovakDay == currentDay %} currentDay3 {% endif %}">
+        <td>
+            <div class="borderStyle ml-1 mr-1 shift">{{ shift[2].shiftAbbreviation }}</div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                <div class="pr-2">+1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around blue">
+                <div class="pl-2"><i class="fas fa-arrow-down"></i></div>
+                <div class="pr-2">-1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around blue">
+                <div class="pl-2"><i class="fas fa-arrow-down"></i></div>
+                <div class="pr-2">-2</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2">0</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                <div class="pr-2">+1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 dark d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2"> 0</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                <div class="pr-2">+2</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around blue">
+                <div class="pl-2"><i class="fas fa-arrow-down"></i></div>
+                <div class="pr-2">-1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around blue">
+                <div class="pl-2"><i class="fas fa-arrow-down"></i></div>
+                <div class="pr-2">-2</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 dark d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2"> 0</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 d-flex justify-content-around red">
+                <div class="pl-2"><i class="fas fa-arrow-up"></i></div>
+                <div class="pr-2">+1</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 dark d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2"> 0</div>
+            </div>
+        </td>
+        <td>
+            <div class="borderStyle ml-1 mr-1 dark d-flex justify-content-around">
+                <div class="pl-2"><i class="fas fa-arrow-right"></i></div>
+                <div class="pr-2"> 0</div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th class="morePadding"></th>
+    </tr>
+{% endfor %}
+

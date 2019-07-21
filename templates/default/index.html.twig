@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+
+{% block body %}
+
+{% include 'default/sidebar.html.twig' %}
+
+
+<div class="row">
+    <div class="col">
+        <table id="main-table" class="table table-sm table-borderless text-center ">
+            <thead>
+            <tr>
+                <th scope="col">
+                    <input id="dateSelect" type="date" class="form-control text-center" name="date" value="{{ currentDate }}">
+                </th>
+                <th scope="col" class='shiftWidth'></th>
+                {% for i in 0..(ueps|length - 1) %}
+                    <th class='header-col' scope='col'>
+                        <span class="uep" data-uep-id="{{ ueps[i].id }}">{{ ueps[i].name }}</span>
+                    </th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+                {% include('default/tableBody.html.twig') %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Dochadzka </button>
+
+
+
+
+    <div id="stats-modal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-hidden="true"
+         data-backdrop="static">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+
+    {% include('default/modalBody.html.twig') %}
+
+                </div>
+                <div class=" modal-footer pr-4">
+                    <button type="button" class="btn btn-width btn-secondary mr-3" data-dismiss="modal">Zavrieť</button>
+                    <button type="button" id="save-btn" class="btn btn-width btn-primary mr-5">Odoslať</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+            {% endblock %}
+
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('router') }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div id="linksContainer" class="col-sm-12">
+                <div class="text-center">
+                    <img class="img-fluid" src="{{ asset('img/psa_logo_blue.svg') }}">
+                </div>
+
+                <div id="linksList" class="list-group">
+                    <div id="mainListItem" class="list-group-item list-group-item-primary text-center">
+                        <h2>Odkazy</h2>
+                    </div>
+                    <a class="list-group-item list-group-item-action" href=" {{ url('index-action', {urAbbreviation: 'mon'} )  }}">
+                        <i class="fas fa-link"></i> MONTAGE</a>
+                    <a class="list-group-item list-group-item-action" href=" {{ url('index-action', {urAbbreviation: 'pei'} )  }}">
+                        <i class="fas fa-link"></i> PEINTURE</a>
+                    <a class="list-group-item list-group-item-action" href=" {{ url('index-action', {urAbbreviation: 'str'} ) }} ">
+                        <i class="fas fa-link"></i> FERRAGE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('router') }}
+{% endblock %}
